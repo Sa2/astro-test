@@ -1,0 +1,23 @@
+---
+const requestData = {
+  Value1: 'hello world1',
+  Value2: 'hello world2'
+}
+const options = {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(requestData) 
+}
+const response = await fetch('http://localhost/postapi', options);
+const data = await response.json();
+//const responseData = data.results[0]
+const value1 = data.value1
+const value2 = data.value2
+---
+
+
+<p>post data</p>
+<p>{requestData.Value1}</p>
+<p>{requestData.Value2}</p>
